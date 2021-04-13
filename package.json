@@ -4,28 +4,27 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-      "start": "nodemon ./app.js --exec babel-node -e js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "nodemon ./app.js --exec babel-node -e js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/UltraSteeze/PlaygroundGallerySite.git"
+        "type": "git",
+        "url": "git+https://github.com/UltraSteeze/PlaygroundGallerySite.git"
     },
-
     "author": "Souvik",
     "license": "ISC",
     "bugs": {
-    "url": "https://github.com/souvik-pl/chatRoom/issues"
+        "url": "https://github.com/souvik-pl/chatRoom/issues"
     },
     "homepage": "",
     "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7",
-    "socket.io": "^2.4.1"
+        "express": "^4.17.1",
+        "nodemon": "^2.0.7",
+        "socket.io": "^2.4.1"
     },
     "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-0": "^6.24.1"
     }
 }
