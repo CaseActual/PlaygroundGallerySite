@@ -1,57 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<title>Playground Virtual Gallery</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel = "stylesheet" href="style.css">
-
-	<!-- Font edit -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="style.css">
-	
+  <meta charset="UTF-8" content="width=device-width,initial-scale=1">
+  <title>Playground Virtual Gallery Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+    <ul class="pages">
+      <li class="chat page">
+        <div class="chatArea">
+          <ul class="messages"></ul>
+        </div>
+       <input class="inputMessage" placeholder="Type here..."/>
+      </li>
+      <li class="login page">
+        <div class="form">
+          <h3 class="title">Enter your chat username:</h3>
+          <input class="usernameInput" type="text" maxlength="14" />
+        </div>
+      </li>
+    </ul>
+  
     
-	<!-- Game iframe -->
-	<!-- <iframe src="https://portal.furioos.com/embed/832.120?hideTitle=true?autoRun=true" width="560" height="315" allowfullscreen="true" style="border: none;"></iframe>
-	-->
-
-
-    <div id="intro">
-      <h1>Gallery Chat</h1>
+    <div class="gallery">
+      <h1>Playground Virtual Gallery</h1>
+      <iframe src="https://portal.furioos.com/embed/938.704?hideTitle=true?autoRun=true" width="1000" height="563" allowfullscreen="true" class="galleryMedia"></iframe>
     </div>
-    
-	<!-- Edit - grouping chat together -->
-	<div id="chat">
-    	<ul id="messages"></ul>
-    
-    	<form action="">
-      	<input id="m" placeholder="Enter your message..." autocomplete="off" required /><button>Send</button>
-    	</form>
-	</div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script>
-    		var socket = io();
 
-    		socket.emit('joining msg', name);
-
-    		$('form').submit(function(e) {
-    			e.preventDefault();            // will prevent page reloading
-      			socket.emit('chat message', (name + ':  ' + $('#m').val()));
-                        $('#messages').append($('<li id="list">').text('You:  ' + $('#m').val()));
-      			$('#m').val('');
-      			return false;
-    		});
-    		socket.on('chat message', function(msg){
-      			$('#messages').append($('<li>').text(msg));
-    		});	
-    </script>
-	<script src="main.js"></script>
-
-	
-
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
 </body>
+
+
+
 </html>
