@@ -162,8 +162,9 @@ ul {
   position: fixed;
   float: right;
   right: 1.5%;
-  top: 9%;
+  top: 1.5%;
 
   text-align: center;
+  font: "Helvetica Neue";
 
 }
