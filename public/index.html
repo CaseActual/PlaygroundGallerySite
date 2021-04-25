@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>ChatRoom</title>
+	<title>Playground Virtual Gallery</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel = "stylesheet" href="style.css">
-	<script>
-		var name = prompt("Enter your chat username:");
-	</script>
+
+	<!-- Font edit -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="style.css">
+	
 </head>
 <body>
     
+	<!-- Game iframe -->
+	<!-- <iframe src="https://portal.furioos.com/embed/832.120?hideTitle=true?autoRun=true" width="560" height="315" allowfullscreen="true" style="border: none;"></iframe>
+	-->
+
+
     <div id="intro">
-      <h1>ChatRoom</h1>
+      <h1>Gallery Chat</h1>
     </div>
     
-    <ul id="messages"></ul>
+	<!-- Edit - grouping chat together -->
+	<div id="chat">
+    	<ul id="messages"></ul>
     
-    <form action="">
-      <input id="m" placeholder="Enter your message..." autocomplete="off" required /><button>Send</button>
-    </form>
+    	<form action="">
+      	<input id="m" placeholder="Enter your message..." autocomplete="off" required /><button>Send</button>
+    	</form>
+	</div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
-		
     		var socket = io();
 
     		socket.emit('joining msg', name);
@@ -38,8 +47,11 @@
     		});
     		socket.on('chat message', function(msg){
       			$('#messages').append($('<li>').text(msg));
-    		});
-  		
+    		});	
     </script>
+	<script src="main.js"></script>
+
+	
+
 </body>
 </html>
